@@ -1,0 +1,171 @@
+<!doctype html>
+{% load static  %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>learning django</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        
+</head>
+<style>
+    .topnav-right {
+        float: right;
+    }
+    .container-fluid .btn{
+        background-color: rgb(47, 72, 142);
+    }
+    .center {
+        {% comment %} display: block; {% endcomment %}
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;   
+    }
+    .navbar-brand {
+        background-color: rgb(0, 97, 189);
+    }
+
+    footer {
+        background-color: #f2f2f2;
+        padding: 0 20px;
+        text-align: center;
+      }
+      .conta {
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      p {
+        margin: 0;
+      }
+      #about {
+        text-align: center;
+        padding: 3rem;
+        background-color: #2387da;
+        margin-top: 5rem;
+      }
+
+
+      {% comment %}                                                                           SLIDER {% endcomment %}
+      .slider {
+        width: 500px;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .image-container {
+        width: 1500px;
+        height: 250px;
+        clear: both;
+        position: relative;
+        -webkit-transition: left 2s;
+        -moz-transition: left 2s;
+        -o-transition: left 2s;
+        transition: left 2s;
+      }
+      .slide {
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+      }
+      #slide-1:target ~ .image-container {
+        left: 0px;
+      }
+      #slide-2:target ~ .image-container {
+        left: -500px;
+      }
+      #slide-3:target ~ .image-container {
+        left: -1000px;
+      }
+      .buttons {
+        position: relative;
+        top: -20px;
+      }
+      .buttons a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color: TRANPARENT;
+      }
+      .top_footer {
+        background: #292929;
+        padding: 3% 0;
+    }
+      
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-brand ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse">
+          <div class="logo_area">
+            <img src="{% static 'signup/images/logo.jpg' %}" class="center">
+          </div>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url "home" %}">NHPC LIMITED </a>
+                </li>
+            </ul>
+            <div class="container-fluid">
+                <a href={% url 'loginaction' %} type="button" class="btn btn-success btn-lg topnav-right">log in</a>
+                <a href={% url 'signaction' %} type="button" class="btn btn-lg btn-success topnav-right">New User</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="slider">
+        <span id="slide-1"></span>
+        <span id="slide-2"></span>
+        <span id="slide-3"></span>
+        <div class="image-container">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/NHPC_Logo_PNG_File.png" class="slide" width="500" height="300" />
+          <img src="{% static 'app/images/img1.jpg' %}" class="slide" width="500" height="300" />
+          <img src="http://www.nhpcindia.com/home.aspx" class="slide" width="500" height="300" />
+        </div>
+        <div class="buttons">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
+
+
+    <section id="about">
+        <h2>About US</h2>
+        <p>NHPC Limited is the largest hydropower development organization in India, with capabilities to undertake all the activities from conceptualization to commissioning of hydro projects.
+            NHPC has also diversified in the field of Solar & Wind energy development etc.<br>
+            NHPC Ltd. Formerly known as National Hydroelectric Power Corporation Ltd. was incorporated in 1975 under Companies Act, 1956. The company is mandated to plan, 
+            promote and organize an integrated and efficient development of power in all its aspects through Conventional and Non-Conventional Sources in India and abroad. 
+            NHPC is a listed company on NSE and BSE after successfully concluding its IPO in 2009.<br>
+            NHPC has an authorized share capital of ₹ 15,000 crores, paid-up share capital of ₹ 10,045.03 crore and 
+            an investment base of ₹ 70,299 crore as on March 31, 2022.<br>
+            NHPC's total installed capacity as on 30th April, 2023 is 7097.20 MW including 1546 MW in Joint Venture, comprising 6971.20 MW from 22 Hydro Power Stations, 76 MW from two Solar Power Project and 50 MW from a Wind Power Project. NHPC's hydro share of 6971.20 MW comes to about 14.88% of the country’s total installed Hydro capacity of 46850.18 MW.</p>
+    </section>
+
+    <section class="top_footer">
+
+    </section>
+
+    <footer>
+        <div class="conta">
+          <p>&copy; 2023 NHPC Ltd. All rights reserved.</p>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>
+
+
+
+
+
+
